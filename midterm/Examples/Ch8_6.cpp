@@ -21,7 +21,7 @@ private:
     int cent;
 };
 
-Money operator+(const Money &amount1, const Money &amount2) {
+const Money operator+(const Money &amount1, const Money &amount2) {
     int cents1 = amount1.getCents() + amount1.getDollars() * 100;
     int cents2 = amount2.getCents() + amount2.getDollars() * 100;
     int allCents = cents1 + cents2;
@@ -47,13 +47,14 @@ bool operator==(const Money &amount1, const Money &amount2) {
     return 0;
 }
 
+const Money operator-(const Money &amount) {
+    return Money(-amount.getDollars(), -amount.getCents());
+}
+
 
 int main() {
     Money money1(4, 2), money2(5, 2);
     Money add = money1 + money2;
 
     cout << add.getDollars() << " dollars " << add.getCents() << " cents";
-
-    Money m1(10, 99), m2(23, 57), m3(12, 34);
-    (m1 + m2) = m3;
 }
