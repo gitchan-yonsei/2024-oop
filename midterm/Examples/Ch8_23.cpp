@@ -58,5 +58,4 @@ int main() {
 
     cout << add.getDollars() << " dollars " << add.getCents() << " cents" << endl;
     cout << "money1 == money2 ? " << isSame << endl;
-
 }
