@@ -46,6 +46,11 @@ public:
         return 0;
     }
 
+    friend ostream &operator<<(ostream &os, const Money &m) {
+        os << m.dollar << " dollars, " << m.cent << " cents";
+        return os;
+    }
+
 private:
     int dollar;
     int cent;
